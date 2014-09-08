@@ -18,12 +18,17 @@
 		return;
 	}
 	$context = Timber::get_context();
-	$context['posts'] = Timber::get_posts();
-	$context['foo'] = 'bar';
+
+	$context['intro'] = new TimberPost(2); // Replace id with proper id for Intro Page.
+	$context['about'] = new TimberPost(5); // Replace id with proper id for Intro Page.
+	$context['trynow'] = new TimberPost(49); // Replace id with proper id for Intro Page.
+
+	$context['usps'] = Timber::get_posts('post_type=usps&post_status=publish');
+	$context['testimonials'] = Timber::get_posts('post_type=testimonials&post_status=publish');
+	$context['support'] = Timber::get_posts('post_type=support&post_status=publish');
+
 	$templates = array('index.twig');
 	if (is_home()){
 		array_unshift($templates, 'home.twig');
 	}
 	Timber::render($templates, $context);
-
-

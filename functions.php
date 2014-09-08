@@ -119,11 +119,6 @@
 
 	new StarterSite();
 
-	function myfoo($text){
-    	$text .= ' bar!';
-    	return $text;
-	}
-
 	function remove_menus () {
 global $menu;
 	$restricted = array(__('Posts'),__('Comments'));

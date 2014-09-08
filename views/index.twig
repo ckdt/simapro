@@ -1,10 +1,63 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h2>{{foo}}</h2>
-	<p>{{qux}}</p>
+
+<header id="intro">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-1">
+				<hgroup>
+					<h1>{{intro.title}}</h1>
+					<h2 class="lead">{{intro.content|striptags}}</h2>
+				</hgroup>
+				<p class="lead">
+					<a href="#about" class="btn btn-primary btn-lg">Read More</a>
+					{% if intro.get_field('reseller_order_url') %}
+						{% if intro.get_field('reseller_order_label') %}
+							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg">{{ intro.get_field('reseller_order_label') }}</a>
+						{% else %}
+							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg">Order SimaPro</a>
+						{% endif %}
+					{% endif %}
+				</p>
+				<p><small>You will be redirected to your local reseller {{ intro.get_field('reseller_name') }}</small></p>
+				{% if intro.can_edit %}
+                  <a href="{{intro.edit_link}}">edit</a>
+               	{% endif %}
+
+			</div>
+			<div class="col-sm-5">
+				{% if intro.thumbnail.src %}
+					<img src="{{intro.thumbnail.src('full')}}" class="img-responsive" />
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+{#
+<pre>
+	{{ dump(intro) }}
+</pre>
+
+<pre>
+	{{ dump(about) }}
+</pre>
+
+<pre>
+	{{ dump(trynow) }}
+</pre>
+
+<pre>
+	{{ dump(usps) }}
+</pre>
+
+
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
+#}
 
 {% endblock %}
