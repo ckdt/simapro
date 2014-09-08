@@ -40,7 +40,7 @@
 				'menu_position' => 5,
 				'hierarchical' => true,
 				'has_archive' => false,
-				'supports' => array('title','editor','thumbnail','excerpt', 'page-attributes'),
+				'supports' => array('title','editor','thumbnail', 'page-attributes'),
 				'taxonomies' => array('post_tag'),
 				'rewrite' => array('slug' => _x('usps', 'URL slug', 'simapro'), 'with_front' => false)
 				)
@@ -67,6 +67,30 @@
 				'has_archive' => false,
 				'supports' => array('title','thumbnail', 'page-attributes'),
 				'rewrite' => array('slug' => _x('testimonials', 'URL slug', 'simapro'), 'with_front' => false)
+				)
+			);
+			register_post_type('support',
+				array(
+				'labels' => array(
+					'name' => _x('Support', 'post type general name', 'simapro'),
+					'singular_name' => _x('Support', 'post type singular name', 'simapro'),
+					'add_new' => _x('Add New', 'Support', 'simapro'),
+					'add_new_item' => __('Add New Support', 'simapro'),
+					'edit_item' => __('Edit Support', 'simapro'),
+					'new_item' => __('New Support', 'simapro'),
+					'view_item' => __('View Support', 'simapro'),
+					'search_items' => __('Search Support', 'simapro'),
+					'not_found' => __('No Support found', 'simapro'),
+					'not_found_in_trash' => __('No Support found in Trash', 'simapro'),
+					'parent' => __('Parent Support', 'simapro'),
+				),
+				'public' => true,
+				'menu_icon' => 'dashicons-smiley',
+				'menu_position' => 5,
+				'hierarchical' => true,
+				'has_archive' => false,
+				'supports' => array('title','editor','page-attributes'),
+				'rewrite' => array('slug' => _x('support', 'URL slug', 'simapro'), 'with_front' => false)
 				)
 			);
 		}
