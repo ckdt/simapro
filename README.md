@@ -1,4 +1,3 @@
 simapro
-=======
 
-Sima Pro Landingspage
+simapro
