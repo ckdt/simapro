@@ -11,10 +11,10 @@
 					<h2 class="lead">{{intro.content|striptags}}</h2>
 				</hgroup>
 				<p class="lead">
-					<a href="#about" class="btn btn-primary btn-lg">Read More</a>
+					<a href="#about" class="btn btn-primary btn-lg btn-scroll" onClick="_gaq.push(['_trackEvent', 'button', 'Read More', '{{site.url}}/#about']);">Read More</a>
 					{% if intro.get_field('reseller_order_url') %}
 						{% if intro.get_field('reseller_order_label') %}
-							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg">{{ intro.get_field('reseller_order_label') }}</a>
+							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg" onClick="_gaq.push(['_trackEvent', 'button', '{{ intro.get_field('reseller_order_label') }}', '{{ intro.get_field('reseller_order_url') }}']);">{{ intro.get_field('reseller_order_label') }}</a>
 						{% else %}
 							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg">Order SimaPro</a>
 						{% endif %}
@@ -49,7 +49,7 @@
 							<p>{{ item.post_content }}</p>
 						</div>
 						<div class="ups-ft">
-							<a href="{{ item.link_url }}" class="btn btn-primary ">{{ item.link_label }}</a>
+							<a href="{{ item.link_url }}" class="btn btn-primary" onClick="_gaq.push(['_trackEvent', 'button', '{{item.post_title}}', '{{ item.link_url }}']);">{{ item.link_label }}</a>
 						</div>
 					</div>
 				{% endfor %}
@@ -111,8 +111,8 @@
 						  </div>
 						</div>
 						<p class="lead">
-							<a href="#" class="btn btn-primary">{{about.get_field('try_label')}}</a>
-							<a href="#" class="btn btn-link">{{about.get_field('more_label')}}</a>
+							<a href="{{about.get_field('try_url')}}" class="btn btn-primary" onClick="_gaq.push(['_trackEvent', 'button', '{{about.get_field('try_label')}}', '{{about.get_field('try_url')}}']);">{{about.get_field('try_label')}}</a>
+							<a href="{{about.get_field('more_url')}}" class="btn btn-link" onClick="_gaq.push(['_trackEvent', 'button', '{{about.get_field('more_label')}}', '{{about.get_field('more_url')}}']);">{{about.get_field('more_label')}}</a>
 						</p>
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<h2>{{trynow.title}}</h2>
-						<a href="{{trynow.get_field('button_url')}}" class="btn btn-default btn-lg">{{trynow.get_field('button_label')}}</a>
+						<a href="{{trynow.get_field('button_url')}}" class="btn btn-default btn-lg" onClick="_gaq.push(['_trackEvent', 'button', '{{trynow.get_field('button_label')}}', '{{trynow.get_field('button_url')}}']);">{{trynow.get_field('button_label')}}</a>
 					</div>
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 					<div class="col-sm-12"><h2>Newsletter</h2></div>
 				</div>
 				<div class="row">
-					<form action="http://pre-sustainability.createsend.com/t/j/s/tjitlh/" method="post" class="form-inline" role="form">
+					<form id="newsletter-form" action="http://pre-sustainability.createsend.com/t/j/s/tjitlh/" method="post" class="form-inline" role="form">
 						<div class="form-group">
 						    <label class="sr-only" for="fieldName">Name</label>
 							<input class="form-control" placeholder="Name" id="fieldName" name="cm-name" type="text" />
@@ -179,7 +179,7 @@
 							<label class="sr-only" for="fieldEmail">Email</label>
 							<input class="form-control" placeholder="E-mail" id="fieldEmail" name="cm-tjitlh-tjitlh" type="email" required />
 						</div>
-						<button type="submit" class="btn btn-default btn-lg">Subscribe</button>
+						<button type="submit" class="btn btn-default btn-lg" id="subscribe" onClick="_gaq.push(['_trackEvent', 'button', 'Subscribe', 'http://pre-sustainability.createsend.com/t/j/s/tjitlh/']);">Subscribe</button>
 						<p>Receive the latest updates in the field of LCA and developments in SimaPro</p>
 						<input type="hidden" id="fieldddlihi-1" name="cm-fo-ddlihi" value="675878" />
 					</form>
@@ -195,7 +195,7 @@
 						<h3>{{item.title}}</h3>
 						<p>{{item.support_content}}</p>
 						<div class="ft">
-							<a href="{{item.support_url}}" class="btn btn-link">{{item.support_label}}</a>
+							<a href="{{item.support_url}}" class="btn btn-link" onClick="_gaq.push(['_trackEvent', 'button', '{{item.title}}', '{{item.support_url}}']);">{{item.support_label}}</a>
 						</div>
 					</div>
 					{% endfor %}

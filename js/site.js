@@ -46,4 +46,27 @@ jQuery(document).ready(function($) {
     });
 
     $("#about .pricing .panel-body .business:nth-child(2)").css("border","none");
+
+    $(".btn-scroll").on('click', function(e) {
+		      e.preventDefault();
+		// animate
+		    $('html, body').animate({
+			         scrollTop: $(this.hash).offset().top - 75
+		           }, 300, function(){
+
+			         window.location.hash = hash;
+		      });
+	   });
+
+
+      $('#subscribe').prop('disabled',true);
+
+      $('#newsletter .form-inline input#fieldEmail').keypress(function(){
+        if($('#newsletter .form-inline input#fieldName').val() !== ''
+          && $('#newsletter .form-inline input#fieldzsjj').val() !== ''){
+              $('#subscribe').prop('disabled',false);
+          }
+      })
+
+     /*end document ready */
 });
