@@ -11,7 +11,7 @@
 
 
 .form-control::-webkit-input-placeholder {
-   color: #eee;
+   color: #000;
 }
 
 .form-control:-moz-placeholder { /* Firefox 18- */
