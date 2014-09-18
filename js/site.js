@@ -62,11 +62,10 @@ jQuery(document).ready(function($) {
       $('#subscribe').prop('disabled',true);
 
       $('#newsletter .form-inline input#fieldEmail,#newsletter .form-inline input#fieldName,#newsletter .form-inline input#fieldzsjj').keypress(function(){
-        if($('#newsletter .form-inline input#fieldName').val() !== ''
-          && $('#newsletter .form-inline input#fieldzsjj').val() !== ''){
+          if($('#newsletter .form-inline input#fieldName').val() !== ''&& $('#newsletter .form-inline input#fieldzsjj').val() !== ''){
               $('#subscribe').prop('disabled',false);
           }
-      })
+      });
 
      /*end document ready */
 });
