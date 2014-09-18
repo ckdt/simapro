@@ -22,7 +22,7 @@
 				</p>
 				<p><small>You will be redirected to your local reseller {{ intro.get_field('reseller_name') }}</small></p>
 				{% if intro.can_edit %}
-                  <a href="{{intro.edit_link}}">edit</a>
+                  <!--<a href="{{intro.edit_link}}">edit</a>-->
                	{% endif %}
 
 			</div>
@@ -35,29 +35,171 @@
 	</div>
 </header>
 
+<section id="usp">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12"><h2>Why use Sima Pro?</h2></div>
+				</div>
+
+				<div class="row">
+					{% for item in usps%}
+					<div class="col-sm-4">
+						<div class="usp-item">
+							<h3><span class="icon icon-{{item.post_title|lower}}"></span>{{ item.post_title }}</h3>
+							<p>{{ item.post_content }}</p>
+						</div>
+						<div class="ups-ft">
+							<a href="{{ item.link_url }}" class="btn btn-primary ">{{ item.link_label }}</a>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<ul class="keywords">
+							<li><span class="label label-default">Sustainability Software</span></li>
+							<li><span class="label label-default">LCA Software</span></li>
+							<li><span class="label label-default">Carbon Footprint</span></li>
+							<li><span class="label label-default">Water Footprint</span></li>
+							<li><span class="label label-default">Product</span></li>
+							<li><span class="label label-default">Environmental Footprint</span></li>
+							<li><span class="label label-default">Life Cycle</span></li>
+							<li><span class="label label-default">Impact Assessment</span></li>
+							<li><span class="label label-default">ecoinvent</span></li>
+							<li><span class="label label-default">Corporate Sustainability</span></li>
+							<li><span class="label label-default">LCI database</span></li>
+							<li><span class="label label-default">Metrics</span></li>
+						</ul>
+					</div>
 
 
-{#
-<pre>
-	{{ dump(intro) }}
-</pre>
 
-<pre>
-	{{ dump(about) }}
-</pre>
+			</div>
+		</section>
 
-<pre>
-	{{ dump(trynow) }}
-</pre>
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3 col-sm-offset-1">
+						<aside>
+							<img src="{{about.thumbnail.src('full')}}" class="img-responsive">
+							<ul>
+								{% for spec in about.get_field('specifications') %}
+								<li>{{spec.option_spec}}</li>
+								{% endfor %}
+							</ul>
+						</aside>
+					</div>
+					<div class="col-sm-6">
+						<h2>{{about.title}}</h2>
+						<p>{{about.content}}</p>
 
-<pre>
-	{{ dump(usps) }}
-</pre>
 
+						<div class="panel panel-default pricing">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">{{about.get_field('pricing_header')}}</h3>
+							<p>{{about.get_field('pricing_subtitle')}}</p>
+						  </div>
+						  <div class="panel-body">
+								{% for price in about.get_field('pricing_option') %}
+								<div class="col-sm-6 business">
+									<h4>{{price.option_title}}</h4>
+						    		<p>starting at</p>
+										<h5>&euro; {{price.option_price}}</h5>
+									</div>
+									{% endfor %}
+						  </div>
+						</div>
+						<p class="lead">
+							<a href="#" class="btn btn-primary">{{about.get_field('try_label')}}</a>
+							<a href="#" class="btn btn-link">{{about.get_field('more_label')}}</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
-#}
+		<section id="demo">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>{{trynow.title}}</h2>
+						<a href="{{trynow.get_field('button_url')}}" class="btn btn-default btn-lg">{{trynow.get_field('button_label')}}</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="testimonials">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2">
+						<div id="slider" class="flexslider">
+
+							<ul class="slides">
+								{% for person in testimonials %}
+								<li>
+									<blockquote>{{person.quote}}</blockquote>
+									<p>&mdash; {{person.author_name}}</p>
+									<small>{{person.author_description}}</small>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div id="carousel" class="flexslider">
+							<ul class="slides">
+								{% for img in testimonials %}
+								<li><img src="{{img.thumbnail.src}}"></li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="newsletter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12"><h2>Newsletter</h2></div>
+				</div>
+				<div class="row">
+					<form class="form-inline" role="form">
+						<div class="form-group">
+						    <label class="sr-only" for="frmName">Name</label>
+						    <input type="text" class="form-control" id="frmName" placeholder="Name">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="frmJob">Job Title</label>
+							<input type="text" class="form-control" id="frmJob" placeholder="Job Title">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="frmMail">E-mail</label>
+							<input type="email" class="form-control" id="frmMail" placeholder="E-mail">
+						</div>
+						<button type="submit" class="btn btn-default btn-lg">Subscribe</button>
+						<p>Receive the latest updates in the field of LCA and developments in SimaPro</p>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact">
+			<div class="container">
+				<div class="row">
+					{% for item in support %}
+					<div class="col-sm-4">
+						<h3>{{item.title}}</h3>
+						<p>{{item.support_content}}</p>
+						<div class="ft">
+							<a href="{{item.support_url}}" class="btn btn-link">{{item.support_label}}</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
 
 {% endblock %}
