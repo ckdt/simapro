@@ -45,5 +45,5 @@ jQuery(document).ready(function($) {
       });
     });
 
-
+    $("#about .pricing .panel-body .business:nth-child(2)").css("border","none");
 });
