@@ -21,9 +21,6 @@
 					{% endif %}
 				</p>
 				<p><small>You will be redirected to your local reseller {{ intro.get_field('reseller_name') }}</small></p>
-				{% if intro.can_edit %}
-                  <!--<a href="{{intro.edit_link}}">edit</a>-->
-               	{% endif %}
 
 			</div>
 			<div class="col-sm-5">
@@ -62,9 +59,6 @@
 							{% endfor %}
 						</ul>
 					</div>
-
-
-
 			</div>
 		</section>
 
@@ -158,24 +152,15 @@
 				</div>
 				<div class="row">
 					<form id="newsletter-form" action="http://pre-sustainability.createsend.com/t/j/s/tjitlh/" method="post" class="form-inline" role="form">
-						<div class="form-group">
-							<label class="sr-only" for="{{newsletter.Input_fields_0_label_for}}">{{newsletter.Input_fields_0_label_name}}</label>
-							<input class="form-control" placeholder="{{newsletter.Input_fields_0_input_placeholder}}" id="{{newsletter.Input_fields_0_input_id}}" name="{{newsletter.Input_fields_0_input_name}}" type="{{newsletter.Input_fields_0_input_type}}"/>
-						</div>
-						<div class="form-group">
-							<label class="sr-only" for="{{newsletter.Input_fields_1_label_for}}">{{newsletter.Input_fields_1_label_name}}</label>
-							<input class="form-control" placeholder="{{newsletter.Input_fields_1_input_placeholder}}" id="{{newsletter.Input_fields_1_input_id}}" name="{{newsletter.Input_fields_1_input_name}}" type="{{newsletter.Input_fields_1_input_type}}"/>
-						</div>
-						<div class="form-group">
-							<label class="sr-only" for="{{newsletter.Input_fields_2_label_for}}">{{newsletter.Input_fields_2_label_name}}</label>
-							<input class="form-control" placeholder="{{newsletter.Input_fields_2_input_placeholder}}" id="{{newsletter.Input_fields_2_input_id}}" name="{{newsletter.Input_fields_2_input_name}}" type="{{newsletter.Input_fields_2_input_type}}" required/>
-						</div>
-
-						<!--<pre>{{dump(newsletter)}}</pre>-->
-
+						{% for input in newsletter.get_field('inputfields') %}
+									<div class="form-group">
+										<label class="sr-only" for="{{input.input_labelfor}}">{{input_labelname}}</label>
+										<input class="form-control" placeholder="{{input.input_placeholder}}" id="{{input.input_id}}" name="{{input.input_name}}" type="{{input.input_type}}" required/>
+									</div>
+						{% endfor %}
 						<button type="submit" class="btn btn-default btn-lg" id="{{newsletter.get_field('id')}}" onClick="_gaq.push(['_trackEvent', 'button', 'Subscribe', 'http://pre-sustainability.createsend.com/t/j/s/tjitlh/']);">{{newsletter.get_field('name')}}</button>
 						<p>{{newsletter.get_field('info_text')}}</p>
-						<input type="hidden" id="fieldddlihi-1" name="cm-fo-ddlihi" value="675878" />
+						<input type="hidden" id="{{newsletter.get_field('hidden_field_id')}}" name="{{newsletter.get_field('hidden_field_name')}}" value="{{newsletter.get_field('hidden_field_value')}}" />
 					</form>
 				</div>
 			</div>

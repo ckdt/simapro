@@ -67,5 +67,5 @@ jQuery(document).ready(function($) {
           }
       });
 
-     /*end document readyOOO */
+     /*end document ready */
 });
