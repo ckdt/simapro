@@ -57,18 +57,9 @@
 				<div class="row">
 					<div class="col-sm-10 col-sm-offset-1">
 						<ul class="keywords">
-							<li><span class="label label-default">Sustainability Software</span></li>
-							<li><span class="label label-default">LCA Software</span></li>
-							<li><span class="label label-default">Carbon Footprint</span></li>
-							<li><span class="label label-default">Water Footprint</span></li>
-							<li><span class="label label-default">Product</span></li>
-							<li><span class="label label-default">Environmental Footprint</span></li>
-							<li><span class="label label-default">Life Cycle</span></li>
-							<li><span class="label label-default">Impact Assessment</span></li>
-							<li><span class="label label-default">ecoinvent</span></li>
-							<li><span class="label label-default">Corporate Sustainability</span></li>
-							<li><span class="label label-default">LCI database</span></li>
-							<li><span class="label label-default">Metrics</span></li>
+							{% for cat in usps_categories %}
+								<li><span class="label label-default">{{cat.name}}</span></li>
+							{% endfor %}
 						</ul>
 					</div>
 
@@ -163,24 +154,27 @@
 		<section id="newsletter">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12"><h2>Newsletter</h2></div>
+					<div class="col-sm-12"><h2>{{newsletter.title}}</h2></div>
 				</div>
 				<div class="row">
 					<form id="newsletter-form" action="http://pre-sustainability.createsend.com/t/j/s/tjitlh/" method="post" class="form-inline" role="form">
 						<div class="form-group">
-						    <label class="sr-only" for="fieldName">Name</label>
-							<input class="form-control" placeholder="Name" id="fieldName" name="cm-name" type="text" />
+							<label class="sr-only" for="{{newsletter.Input_fields_0_label_for}}">{{newsletter.Input_fields_0_label_name}}</label>
+							<input class="form-control" placeholder="{{newsletter.Input_fields_0_input_placeholder}}" id="{{newsletter.Input_fields_0_input_id}}" name="{{newsletter.Input_fields_0_input_name}}" type="{{newsletter.Input_fields_0_input_type}}"/>
 						</div>
 						<div class="form-group">
-							<label class="sr-only" for="fieldzsjj">Job title</label>
-							<input class="form-control" placeholder="Job Title" id="fieldzsjj" name="cm-f-zsjj" type="text" />
+							<label class="sr-only" for="{{newsletter.Input_fields_1_label_for}}">{{newsletter.Input_fields_1_label_name}}</label>
+							<input class="form-control" placeholder="{{newsletter.Input_fields_1_input_placeholder}}" id="{{newsletter.Input_fields_1_input_id}}" name="{{newsletter.Input_fields_1_input_name}}" type="{{newsletter.Input_fields_1_input_type}}"/>
 						</div>
 						<div class="form-group">
-							<label class="sr-only" for="fieldEmail">Email</label>
-							<input class="form-control" placeholder="E-mail" id="fieldEmail" name="cm-tjitlh-tjitlh" type="email" required />
+							<label class="sr-only" for="{{newsletter.Input_fields_2_label_for}}">{{newsletter.Input_fields_2_label_name}}</label>
+							<input class="form-control" placeholder="{{newsletter.Input_fields_2_input_placeholder}}" id="{{newsletter.Input_fields_2_input_id}}" name="{{newsletter.Input_fields_2_input_name}}" type="{{newsletter.Input_fields_2_input_type}}" required/>
 						</div>
-						<button type="submit" class="btn btn-default btn-lg" id="subscribe" onClick="_gaq.push(['_trackEvent', 'button', 'Subscribe', 'http://pre-sustainability.createsend.com/t/j/s/tjitlh/']);">Subscribe</button>
-						<p>Receive the latest updates in the field of LCA and developments in SimaPro</p>
+
+						<!--<pre>{{dump(newsletter)}}</pre>-->
+
+						<button type="submit" class="btn btn-default btn-lg" id="{{newsletter.get_field('id')}}" onClick="_gaq.push(['_trackEvent', 'button', 'Subscribe', 'http://pre-sustainability.createsend.com/t/j/s/tjitlh/']);">{{newsletter.get_field('name')}}</button>
+						<p>{{newsletter.get_field('info_text')}}</p>
 						<input type="hidden" id="fieldddlihi-1" name="cm-fo-ddlihi" value="675878" />
 					</form>
 				</div>
@@ -202,5 +196,4 @@
 				</div>
 			</div>
 		</section>
-
 {% endblock %}
