@@ -27,6 +27,7 @@
 }
 
 
+
 @font-face {
 	font-family: 'PF Centro Sans Pro';
 	src: url('fonts/pfcentrosanspro-light.eot');
@@ -430,6 +431,9 @@ padding: 20px 0;
 #demo h2{
 	padding:0 80px;
 	}
+#usp .usp-item{
+  min-height:333px;
+  }
 }
 
 /* IPAD LANDSXAPE */
