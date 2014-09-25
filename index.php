@@ -22,8 +22,11 @@
 	$context['intro'] = new TimberPost(39); // Replace id with proper id for Intro Page.
 	$context['about'] = new TimberPost(35); // Replace id with proper id for Intro Page.
 	$context['trynow'] = new TimberPost(47); // Replace id with proper id for Intro Page.
+	$context['newsletter'] = new TimberPost(104);
 
 	$context['usps'] = Timber::get_posts('post_type=usps&post_status=publish');
+	$context['usps_categories'] = Timber::get_terms('post_tag',array('hide_empty'=>false));
+
 	$context['testimonials'] = Timber::get_posts('post_type=testimonials&post_status=publish');
 	$context['support'] = Timber::get_posts('post_type=support&post_status=publish');
 
