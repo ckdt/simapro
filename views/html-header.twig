@@ -26,12 +26,73 @@
 <?php if ( is_user_logged_in() ) { ?>
 <style  type="text/css" media="screen">
 .navbar { margin-top: 30px; }
+#langpanel{ margin-top: 30px;}
 </style>
 <?php } ?>
 
 <body class="{{body_class}}" data-template="base.twig" data-spy="scroll" data-target=".navbar" data-offset="80">
-    <div id="home" class="site">
 
+      <div id="langpanel">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-sm-12">
+  					<h2 class="text-center">Select your country</h2>
+  				</div>
+  				<div class="col-sm-3">
+  					<h4>Europe</h4>
+              <ul>
+                {% for item in menu_eu.get_items %}
+                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                {% endfor %}
+              </ul>
+  				</div>
+  				<div class="col-sm-3">
+  					<h4>America</h4>
+              <ul>
+                {% for item in menu_usa.get_items %}
+                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                {% endfor %}
+              </ul>
+            <h4>Australia</h4>
+              <ul>
+                {% for item in menu_aus.get_items %}
+                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                {% endfor %}
+              </ul>
+            <h4>Africa</h4>
+            <ul>
+              {% for item in menu_afr.get_items %}
+                <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+              {% endfor %}
+            </ul>
+  				</div>
+  				<div class="col-sm-3">
+  					<h4>Asia</h4>
+              <ul>
+                {% for item in menu_asi.get_items %}
+                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                {% endfor %}
+              </ul>
+            <h4>Middle East</h4>
+              <ul>
+                {% for item in menu_mid.get_items %}
+                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                {% endfor %}
+              </ul>
+  				</div>
+  				<div class="col-sm-3">
+  					<h4>Didn't find your country?</h4>
+              <ul>
+                {% for item in menu_other.get_items %}
+                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                {% endfor %}
+              </ul>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+    <div id="home" class="site">
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
@@ -53,7 +114,9 @@
 					</ul>
 					<ul class="nav navbar-nav pull-right">
 						<li><a href="{{trynow.get_field('button_url')}}" class="tryout hidden-sm mobile-hidden"><strong>{{trynow.get_field('button_label')}}</strong></a>
-					</ul>
+					  <li><a href="#">NL</a></li>
+						<li><div id="panell" class="country flag flag-nl"></div></li>
+          </ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>

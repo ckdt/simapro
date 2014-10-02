@@ -15,6 +15,7 @@
 			add_filter('timber_context', array($this, 'add_to_context'));
 			add_filter('get_twig', array($this, 'add_to_twig'));
 			add_action('init', array($this, 'register_post_types'));
+			add_action('init', array($this, 'register_menu_locations'));
 			add_action('init', array($this, 'register_taxonomies'));
 			parent::__construct();
 		}
@@ -95,6 +96,20 @@
 			);
 		}
 
+		function register_menu_locations(){
+			register_nav_menus(
+				array(
+				'eur_menu' => 'Europe Menu',
+				'usa_menu' => 'America Menu',
+				'aus_menu' => 'Australia Menu',
+				'afr_menu' => 'Africa Menu',
+				'asi_menu' => 'Asia Menu',
+				'mid_menu' => 'Middle East Menu',
+				'other_menu' => 'Others Menu'
+				)
+			);
+		}
+
 		function register_taxonomies(){
 			//this is where you can register custom taxonomies
 		}
@@ -103,7 +118,7 @@
 			$context['foo'] = 'bar';
 			$context['stuff'] = 'I am a value set in your functions.php file';
 			$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-			$context['menu'] = new TimberMenu();
+			//$context['menu'] = new TimberMenu(421);
 			$context['site'] = $this;
 			return $context;
 		}

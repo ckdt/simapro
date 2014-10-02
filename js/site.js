@@ -67,5 +67,43 @@ jQuery(document).ready(function($) {
           }
       });
 
+     /* langpanel */
+
+     $('#panell').click(function(){
+			if($('body').css("marginTop") == '0px'){
+				$('body').animate({
+					marginTop:"748px"
+				});
+			} else {
+				$('body').animate({
+					marginTop:"0px"
+				});
+			}
+		});
+
+		$('#panell').click(function(){
+			if($('.navbar-fixed-top').css("top") == '0px'){
+				$('.navbar-fixed-top').animate({
+					top:"748px"
+				});
+			} else {
+				$('.navbar-fixed-top').animate({
+					top:"0px"
+				});
+			}
+		});
+
+		$('#panell').click(function(){
+			//if($('#langpanel').css("top") == '-748px'){
+      if($('.navbar-fixed-top').css("top") == '0px'){
+				$('#langpanel').animate({
+					top:"0px",
+				});
+			} else {
+				$('#langpanel').animate({
+					top:"-748px",
+				});
+			}
+		});
      /*end document ready */
 });

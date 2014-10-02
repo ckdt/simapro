@@ -30,6 +30,14 @@
 	$context['testimonials'] = Timber::get_posts('post_type=testimonials&post_status=publish');
 	$context['support'] = Timber::get_posts('post_type=support&post_status=publish');
 
+	$context['menu_eu'] = new TimberMenu('eur_menu');
+	$context['menu_usa'] = new TimberMenu('usa_menu');
+	$context['menu_aus'] = new TimberMenu('aus_menu');
+	$context['menu_afr'] = new TimberMenu('afr_menu');
+	$context['menu_asi'] = new TimberMenu('asi_menu');
+	$context['menu_mid'] = new TimberMenu('mid_menu');
+	$context['menu_other'] = new TimberMenu('other_menu');
+
 	$templates = array('index.twig');
 	if (is_home()){
 		array_unshift($templates, 'home.twig');
