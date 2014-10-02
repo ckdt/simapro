@@ -84,7 +84,7 @@
   					<h4>Didn't find your country?</h4>
               <ul>
                 {% for item in menu_other.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_name}} {{item.subtitle}}</a></li>
                 {% endfor %}
               </ul>
   				</div>
@@ -114,7 +114,7 @@
 					</ul>
 					<ul class="nav navbar-nav pull-right">
 						<li><a href="{{trynow.get_field('button_url')}}" class="tryout hidden-sm mobile-hidden"><strong>{{trynow.get_field('button_label')}}</strong></a>
-					  <li><a href="#">NL</a></li>
+					  <li class="language"><a href="#" class="language">NL</a></li>
 						<li><div id="panell" class="country flag flag-nl"></div></li>
           </ul>
 				</div><!--/.nav-collapse -->

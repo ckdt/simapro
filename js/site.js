@@ -72,11 +72,13 @@ jQuery(document).ready(function($) {
      $('#panell').click(function(){
 			if($('body').css("marginTop") == '0px'){
 				$('body').animate({
-					marginTop:"748px"
+					marginTop:"748px",
+					backgroundPositionY:"823px"
 				});
 			} else {
 				$('body').animate({
-					marginTop:"0px"
+					marginTop:"0px",
+          backgroundPositionY:"75px"
 				});
 			}
 		});

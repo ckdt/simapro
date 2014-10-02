@@ -112,6 +112,11 @@ body{
 #langpanel .container .row .col-sm-3 ul li a{
   color:#FFF;
   text-decoration:none;
+  display:block;
+}
+
+#langpanel .container .row .col-sm-3 ul li a:first-letter{
+  text-transform: uppercase;
 }
 
 #langpanel .container .row .col-sm-3 ul li a:hover{
@@ -128,6 +133,10 @@ body{
   background:url('./img/flags.png');
   float:right;
   margin-top:31px;
+  cursor: pointer;
+}
+
+.language{
 }
 
 .logo{
