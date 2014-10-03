@@ -101,11 +101,18 @@ jQuery(document).ready(function($) {
 				$('#langpanel').animate({
 					top:"0px",
 				});
+        $('.arrow-down').fadeIn();
+        $('.country').css({"margin-top":"17px"});
 			} else {
 				$('#langpanel').animate({
 					top:"-748px",
 				});
+        $('.arrow-down').fadeOut();
+        $('.country').css({"margin-top":"31px"});
 			}
 		});
-     /*end document ready */
-});
+
+    /*$('#panell').click(function(){
+      $('.arrow-down').slideDown();
+    });*/
+});/*end document ready */

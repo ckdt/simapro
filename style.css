@@ -139,6 +139,17 @@ body{
 .language{
 }
 
+.arrow-down{
+  width:0;
+  height:0;
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+  border-top:15px solid #211940;
+  position:relative;
+  left:2px;
+  display:none;
+}
+
 .logo{
 	margin-right:70px;
 }
