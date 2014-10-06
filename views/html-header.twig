@@ -42,7 +42,7 @@
   					<h4>Europe</h4>
               <ul>
                 {% for item in menu_eu.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_title}}</a></li>
                 {% endfor %}
               </ul>
   				</div>
@@ -50,19 +50,19 @@
   					<h4>America</h4>
               <ul>
                 {% for item in menu_usa.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_title}}</a></li>
                 {% endfor %}
               </ul>
             <h4>Australia</h4>
               <ul>
                 {% for item in menu_aus.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_title}}</a></li>
                 {% endfor %}
               </ul>
             <h4>Africa</h4>
             <ul>
               {% for item in menu_afr.get_items %}
-                <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                <li><a href="{{item.url}}">{{item.post_title}}</a></li>
               {% endfor %}
             </ul>
   				</div>
@@ -70,13 +70,13 @@
   					<h4>Asia</h4>
               <ul>
                 {% for item in menu_asi.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_title}}</a></li>
                 {% endfor %}
               </ul>
             <h4>Middle East</h4>
               <ul>
                 {% for item in menu_mid.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_title}}</a></li>
                 {% endfor %}
               </ul>
   				</div>
@@ -84,7 +84,7 @@
   					<h4>Didn't find your country?</h4>
               <ul>
                 {% for item in menu_other.get_items %}
-                  <li><a href="{{item.url}}">{{item.post_name}} {{item.subtitle}}</a></li>
+                  <li><a href="{{item.url}}">{{item.post_title}} {#{{item.subtitle}}#}</a></li>
                 {% endfor %}
               </ul>
   				</div>

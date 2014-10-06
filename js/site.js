@@ -96,23 +96,19 @@ jQuery(document).ready(function($) {
 		});
 
 		$('#panell').click(function(){
-			//if($('#langpanel').css("top") == '-748px'){
       if($('.navbar-fixed-top').css("top") == '0px'){
 				$('#langpanel').animate({
 					top:"0px",
 				});
         $('.arrow-down').fadeIn();
-        $('.country').css({"margin-top":"17px"});
+        $('.country').css({"margin-top":"22px"});
 			} else {
 				$('#langpanel').animate({
 					top:"-748px",
 				});
         $('.arrow-down').fadeOut();
-        $('.country').css({"margin-top":"31px"});
+        $('.country').css({"margin-top":"32px"});
 			}
 		});
 
-    /*$('#panell').click(function(){
-      $('.arrow-down').slideDown();
-    });*/
 });/*end document ready */
