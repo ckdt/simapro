@@ -237,6 +237,16 @@ body{
 #intro img{
 	margin-top:20px;
 }
+#reseller{
+  background:#f7f7f7;
+  padding:50px 0;
+  color:#5388c6;
+}
+#reseller h2{
+  font-size:44px;
+  font-weight:lighter;
+  padding-bottom:20px;
+}
 #usp{
 	padding-bottom:80px;
 	background:#5388c6 url('img/simaprocycle.png') no-repeat bottom center;
@@ -592,6 +602,20 @@ padding: 20px 0;
 	#demo h2{
 		padding:0px;
 	}
+  #reseller{
+    text-align:center;
+  }
+  #reseller h2{
+    font-size:24px;
+    text-align:center;
+  }
+  #reseller a{
+    font-size:14px;
+    text-align:center;
+  }
+  #langpanel{
+    display:none;
+  }
 }
 
 @media (max-width: 767px) {
