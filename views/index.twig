@@ -2,42 +2,54 @@
 
 {% block content %}
 
-<header id="intro">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-1">
-				<hgroup>
-					<h1>{{intro.title}}</h1>
-					<h2 class="lead">{{intro.content|striptags}}</h2>
-				</hgroup>
-				<p class="lead">
-					<a href="#about" class="btn btn-primary btn-lg btn-scroll" onClick="_gaq.push(['_trackEvent', 'button', 'Read More', '{{site.url}}/#about']);">Read More</a>
-					{% if intro.get_field('reseller_order_url') %}
-						{% if intro.get_field('reseller_order_label') %}
-							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg" onClick="_gaq.push(['_trackEvent', 'button', '{{ intro.get_field('reseller_order_label') }}', '{{ intro.get_field('reseller_order_url') }}']);">{{ intro.get_field('reseller_order_label') }}</a>
-						{% else %}
-							<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg">Order SimaPro</a>
-						{% endif %}
-					{% endif %}
-				</p>
-				<p><small>You will be redirected to your local reseller {{ intro.get_field('reseller_name') }}</small></p>
-
-			</div>
-			<div class="col-sm-5">
-				{% if intro.thumbnail.src %}
-					<img src="{{intro.thumbnail.src('full')}}" class="img-responsive" />
-				{% endif %}
-			</div>
-		</div>
-	</div>
-</header>
-
-<section id="usp">
+		<header id="intro">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12"><h2>Why use Sima Pro?</h2></div>
+					<div class="col-sm-6 col-sm-offset-1">
+						<hgroup>
+							<h1>{{intro.title}}</h1>
+							<h2 class="lead">{{intro.content|striptags}}</h2>
+						</hgroup>
+						<p class="lead">
+							<a href="#about" class="btn btn-primary btn-lg btn-scroll" onClick="_gaq.push(['_trackEvent', 'button', 'Read More', '{{site.url}}/#about']);">Read More</a>
+							{% if intro.get_field('reseller_order_url') %}
+								{% if intro.get_field('reseller_order_label') %}
+									<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg" onClick="_gaq.push(['_trackEvent', 'button', '{{ intro.get_field('reseller_order_label') }}', '{{ intro.get_field('reseller_order_url') }}']);">{{ intro.get_field('reseller_order_label') }}</a>
+								{% else %}
+									<a href="{{ intro.get_field('reseller_order_url') }}" class="btn btn-link btn-lg">Order SimaPro</a>
+								{% endif %}
+							{% endif %}
+						</p>
+						<p><small>You will be redirected to your local partner {{ intro.get_field('reseller_name') }}</small></p>
+					</div>
+					<div class="col-sm-5">
+						{% if intro.thumbnail.src %}
+							<img src="{{intro.thumbnail.src('full')}}" class="img-responsive" />
+						{% endif %}
+					</div>
 				</div>
+			</div>
+		</header>
 
+		<section id="reseller">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-5">
+						<img src="{{local.thumbnail.src('full')}}" class="img-responsive" />
+					</div>
+					<div class="col-sm-7">
+						<h2>{{local.title}}</h2>
+						<a href="{{local.get_field('button_url')}}" class="btn btn-primary btn-lg">{{local.get_field('button_title')}}</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="usp">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12"><h2>Why use SimaPro?</h2></div>
+				</div>
 				<div class="row">
 					{% for item in usps%}
 					<div class="col-sm-4">
@@ -70,7 +82,7 @@
 							<img src="{{about.thumbnail.src('full')}}" class="img-responsive">
 							<ul>
 								{% for spec in about.get_field('specifications') %}
-								<li>{{spec.option_spec}}</li>
+									<li>{{spec.option_spec}}</li>
 								{% endfor %}
 							</ul>
 						</aside>
@@ -78,8 +90,6 @@
 					<div class="col-sm-6">
 						<h2>{{about.title}}</h2>
 						<p>{{about.content}}</p>
-
-
 						<div class="panel panel-default pricing">
 						  <div class="panel-heading">
 						    <h3 class="panel-title">{{about.get_field('pricing_header')}}</h3>
@@ -87,12 +97,12 @@
 						  </div>
 						  <div class="panel-body">
 								{% for price in about.get_field('pricing_option') %}
-								<div class="col-sm-6 business">
-									<h4>{{price.option_title}}</h4>
-						    		<p>starting at</p>
+									<div class="col-sm-6 business">
+										<h4>{{price.option_title}}</h4>
+							    	<p>starting at</p>
 										<h5>&euro; {{price.option_price}}</h5>
 									</div>
-									{% endfor %}
+								{% endfor %}
 						  </div>
 						</div>
 						<p class="lead">
@@ -120,7 +130,6 @@
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
 						<div id="slider" class="flexslider">
-
 							<ul class="slides">
 								{% for person in testimonials %}
 								<li>
@@ -170,13 +179,13 @@
 			<div class="container">
 				<div class="row">
 					{% for item in support %}
-					<div class="col-sm-4">
-						<h3>{{item.title}}</h3>
-						<p>{{item.support_content}}</p>
-						<div class="ft">
-							<a href="{{item.support_url}}" class="btn btn-link" onClick="_gaq.push(['_trackEvent', 'button', '{{item.title}}', '{{item.support_url}}']);">{{item.support_label}}</a>
+						<div class="col-sm-3">
+							<h3>{{item.title}}</h3>
+							<p>{{item.support_content}}</p>
+							<div class="ft">
+								<a href="{{item.support_url}}" class="btn btn-link" onClick="_gaq.push(['_trackEvent', 'button', '{{item.title}}', '{{item.support_url}}']);">{{item.support_label}}</a>
+							</div>
 						</div>
-					</div>
 					{% endfor %}
 				</div>
 			</div>
