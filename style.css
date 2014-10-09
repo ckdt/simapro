@@ -491,7 +491,9 @@ body{
 	padding: 70px 0;
 	background:#fff url('img/background.jpg') no-repeat bottom;
 }
-
+#contact .container{
+  margin-bottom:50px;
+}
 #footer{
 background:#5388c6;
 color: #fff;
