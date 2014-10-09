@@ -20,7 +20,7 @@
 								{% endif %}
 							{% endif %}
 						</p>
-						<p><small>You will be redirected to your local reseller {{ intro.get_field('reseller_name') }}</small></p>
+						<p><small>You will be redirected to your local partner {{ intro.get_field('reseller_name') }}</small></p>
 					</div>
 					<div class="col-sm-5">
 						{% if intro.thumbnail.src %}
@@ -48,7 +48,7 @@
 		<section id="usp">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12"><h2>Why use Sima Pro?</h2></div>
+					<div class="col-sm-12"><h2>Why use SimaPro?</h2></div>
 				</div>
 				<div class="row">
 					{% for item in usps%}
@@ -179,7 +179,7 @@
 			<div class="container">
 				<div class="row">
 					{% for item in support %}
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<h3>{{item.title}}</h3>
 							<p>{{item.support_content}}</p>
 							<div class="ft">
