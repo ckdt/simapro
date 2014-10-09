@@ -11,3 +11,5 @@
 **03.10.2014** - Added arrow-down in language panel
 
 **06.10.2014** - Added Reseller blog, Minor fixes in code
+
+**09.10.2014** - Added support column, edited menu 
