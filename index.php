@@ -21,15 +21,15 @@
 
 	$context['intro'] = new TimberPost(39); // Replace id with proper id for Intro Page.
 	$context['local'] = new TimberPost(199);
-	$context['about'] = new TimberPost(35); 
+	$context['about'] = new TimberPost(35);
 	$context['trynow'] = new TimberPost(47);
 	$context['newsletter'] = new TimberPost(104);
 
-	$context['usps'] = Timber::get_posts('post_type=usps&post_status=publish');
+	$context['usps'] = Timber::get_posts('post_type=usps&post_status=publish&orderby=menu_order&order=ASC');
 	$context['usps_categories'] = Timber::get_terms('post_tag',array('hide_empty'=>false));
 
-	$context['testimonials'] = Timber::get_posts('post_type=testimonials&post_status=publish');
-	$context['support'] = Timber::get_posts('post_type=support&post_status=publish');
+	$context['testimonials'] = Timber::get_posts('post_type=testimonials&post_status=publish&orderby=menu_order&order=ASC');
+	$context['support'] = Timber::get_posts('post_type=support&post_status=publish&orderby=menu_order&order=ASC');
 
 	$context['menu_eu'] = new TimberMenu('eur_menu');
 	$context['menu_usa'] = new TimberMenu('usa_menu');
