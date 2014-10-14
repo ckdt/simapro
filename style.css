@@ -548,7 +548,7 @@ padding: 20px 0;
 @media only screen and (max-width : 768px) {
 #contact{
 	padding: 70px 0;
-	background:#fff url('img/background.jpg') no-repeat 0 327px;
+	background:#fff url('img/background.jpg') no-repeat bottom;
 	}
 #newsletter .form-inline input{
 	margin:0 auto;
@@ -594,7 +594,7 @@ padding: 20px 0;
 @media only screen and (max-width : 320px) {
 #contact{
 	padding: 70px 0;
-	background:#fff url('img/background.jpg') no-repeat 0 640px;
+	background:#fff url('img/background.jpg') no-repeat bottom;
 	}
 	#about .pricing .panel-body .business{
 		border-right:0;
