@@ -138,6 +138,7 @@ body{
 }
 
 .language{
+    text-transform: uppercase;
 }
 
 .arrow-down{

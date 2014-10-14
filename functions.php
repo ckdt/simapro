@@ -17,6 +17,7 @@
 			add_action('init', array($this, 'register_post_types'));
 			add_action('init', array($this, 'register_menu_locations'));
 			add_action('init', array($this, 'register_taxonomies'));
+			add_action('init', array($this, 'register_custom_options_panel'));
 			parent::__construct();
 		}
 
@@ -108,6 +109,12 @@
 				'other_menu' => 'Others Menu'
 				)
 			);
+		}
+
+		function register_custom_options_panel(){
+			if( function_exists('acf_add_options_page') ) {
+				acf_add_options_page();
+			}
 		}
 
 		function register_taxonomies(){
