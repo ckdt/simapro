@@ -15,3 +15,5 @@
 **09.10.2014** - Added support column, edited menu 
 
 **14.10.2014** - Added options page with flag classes and language name
+
+**16.10.2014** - Added 27 reseller sites

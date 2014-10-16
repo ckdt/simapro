@@ -153,4 +153,22 @@ jQuery(document).ready(function($) {
      }
    });
 
+   <!---->
+   $('#langpanel').click(function(){
+    if($('body').css("marginTop") !== '0px'){
+      $('body').animate({
+        marginTop:"0px",
+        backgroundPositionY:"75px"
+      });
+      $('.navbar-fixed-top').animate({
+        top:"0px"
+      });
+      $('#langpanel').animate({
+        top:"-748px",
+      });
+      $('.arrow-down').fadeOut();
+      $('.country').css({"margin-top":"32px"});
+    }
+  });
+
 });/*end document ready */
