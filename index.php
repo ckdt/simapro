@@ -20,6 +20,7 @@
 	$context = Timber::get_context();
 
 	$context['lang_class'] = get_field('language', 'options');
+	$context['lang_name'] = get_field('language_name', 'options');
 
 	$context['intro'] = new TimberPost(39); // Replace id with proper id for Intro Page.
 	$context['local'] = new TimberPost(199);
