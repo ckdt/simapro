@@ -173,7 +173,16 @@ jQuery(document).ready(function($) {
   });
 
 // Google Tracking
-$( ".btn", ".btn-head" ).each(function(index) {
+$( ".btn-head" ).each(function(index) {
+    $(this).on("click", function(){
+        var name =  $(this).attr('data-track-name');
+        var url = $(this).attr('data-track-url');
+        console.log("Track:",name,url);
+        ga('send', 'event', 'button', name , url);
+    });
+});
+
+$( ".btn" ).each(function(index) {
     $(this).on("click", function(){
         var name =  $(this).attr('data-track-name');
         var url = $(this).attr('data-track-url');

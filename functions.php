@@ -113,7 +113,13 @@
 
 		function register_custom_options_panel(){
 			if( function_exists('acf_add_options_page') ) {
-				acf_add_options_page();
+				$page = acf_add_options_page(array(
+					'page_title' 	=> 'Options',
+					'menu_title' 	=> 'Options',
+					'menu_slug' 	=> 'acf-options',
+					'capability' 	=> 'create_users',
+					'redirect' 	=> false
+				));
 			}
 		}
 
