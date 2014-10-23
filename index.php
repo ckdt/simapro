@@ -21,6 +21,8 @@
 
 	$context['lang_class'] = get_field('language', 'options');
 	$context['lang_name'] = get_field('language_name', 'options');
+	$context['ga'] = get_field('google_analytics_code', 'options');
+	$context['canon'] = get_field('canonical_link', 'options');
 
 	$context['intro'] = new TimberPost(39); // Replace id with proper id for Intro Page.
 	$context['local'] = new TimberPost(199);

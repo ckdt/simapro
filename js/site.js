@@ -47,6 +47,7 @@ jQuery(document).ready(function($) {
 
     $("#about .pricing .panel-body .business:nth-child(2)").css("border","none");
 
+
     $(".btn-scroll").on('click', function(e) {
 		      e.preventDefault();
 		// animate
@@ -170,5 +171,15 @@ jQuery(document).ready(function($) {
       $('.country').css({"margin-top":"32px"});
     }
   });
+
+// Google Tracking
+$( ".btn", ".btn-head" ).each(function(index) {
+    $(this).on("click", function(){
+        var name =  $(this).attr('data-track-name');
+        var url = $(this).attr('data-track-url');
+        console.log("Track:",name,url);
+        ga('send', 'event', 'button', name , url);
+    });
+});
 
 });/*end document ready */

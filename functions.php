@@ -177,3 +177,5 @@ function add_scripts_and_styles(){
 }
 
 add_action('wp_enqueue_scripts','add_scripts_and_styles');
+
+add_filter( 'wpseo_canonical', '__return_false' );
