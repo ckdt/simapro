@@ -17,3 +17,5 @@
 **14.10.2014** - Added options page with flag classes and language name
 
 **16.10.2014** - Added 27 reseller sites
+
+**30.10.2014** - Menu,Read button, Price valuta now custimizible
