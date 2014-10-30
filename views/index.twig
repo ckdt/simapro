@@ -12,7 +12,7 @@
 						</hgroup>
 						<p class="lead">
 
-							<a href="#about" class="btn btn-primary btn-lg btn-scroll" data-track-name="Read More" data-track-url="{{site.url}}/#about">Read More</a>
+							<a href="#about" class="btn btn-primary btn-lg btn-scroll" data-track-name="Read More" data-track-url="{{site.url}}/#about">{{ intro.get_field('read_more_text')}}</a>
 
 							{% if intro.get_field('reseller_order_url') %}
 								{% if intro.get_field('reseller_order_label') %}
@@ -22,7 +22,7 @@
 								{% endif %}
 							{% endif %}
 						</p>
-						<p><small>You will be redirected to your local partner {{ intro.get_field('reseller_name') }}</small></p>
+						<p><small>{{ intro.get_field('reseller_name') }}</small></p>
 					</div>
 					<div class="col-sm-5">
 						{% if intro.thumbnail.src %}
@@ -50,7 +50,7 @@
 		<section id="usp">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12"><h2>Why use SimaPro?</h2></div>
+					<div class="col-sm-12"><h2>{{ usp_title }}</h2></div>
 				</div>
 				<div class="row">
 					{% for item in usps%}
@@ -101,8 +101,8 @@
 								{% for price in about.get_field('pricing_option') %}
 									<div class="col-sm-6 business">
 										<h4>{{price.option_title}}</h4>
-							    	<p>starting at</p>
-										<h5>&euro; {{price.option_price}}</h5>
+							    	<p>{{price.price_start}}</p>
+										<h5>{{price.option_price}}</h5>
 									</div>
 								{% endfor %}
 						  </div>

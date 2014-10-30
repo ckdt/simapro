@@ -23,6 +23,10 @@
 	$context['lang_name'] = get_field('language_name', 'options');
 	$context['ga'] = get_field('google_analytics_code', 'options');
 	$context['canon'] = get_field('canonical_link', 'options');
+	$context['usp_title'] = get_field('usp_title', 'options');
+	$context['menu_item_1'] = get_field('main_menu_item_1', 'options');
+	$context['menu_item_2'] = get_field('main_menu_item_2', 'options');
+	$context['menu_item_3'] = get_field('main_menu_item_3', 'options');
 
 	$context['intro'] = new TimberPost(39); // Replace id with proper id for Intro Page.
 	$context['local'] = new TimberPost(199);
