@@ -1473,6 +1473,23 @@ register_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array (
+			'key' => 'field_5459f72076a0d',
+			'label' => 'Footer text',
+			'name' => 'footer_text',
+			'prefix' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'default_value' => '',
+			'placeholder' => 'The text in the footer...',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
 	),
 	'location' => array (
 		array (
