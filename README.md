@@ -12,10 +12,12 @@
 
 **06.10.2014** - Added Reseller blog, Minor fixes in code
 
-**09.10.2014** - Added support column, edited menu 
+**09.10.2014** - Added support column, edited menu
 
 **14.10.2014** - Added options page with flag classes and language name
 
 **16.10.2014** - Added 27 reseller sites
 
 **30.10.2014** - Menu,Read button, Price valuta now custimizible
+
+**05.11.2014** - Footer text now custimizible
