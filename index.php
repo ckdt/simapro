@@ -27,6 +27,7 @@
 	$context['menu_item_1'] = get_field('main_menu_item_1', 'options');
 	$context['menu_item_2'] = get_field('main_menu_item_2', 'options');
 	$context['menu_item_3'] = get_field('main_menu_item_3', 'options');
+	$context['footer_text'] = get_field('footer_text', 'options');
 
 	$context['intro'] = new TimberPost(39); // Replace id with proper id for Intro Page.
 	$context['local'] = new TimberPost(199);
