@@ -1081,7 +1081,7 @@ register_field_group(array (
 	'key' => 'group_543be5b6f3a67',
 	'title' => 'Theme Options',
 	'fields' => array (
-		array (
+		/*array (
 			'key' => 'field_543be5c44402b',
 			'label' => 'Language',
 			'name' => 'language',
@@ -1353,7 +1353,7 @@ register_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
-		),
+		),*/
 		array (
 			'key' => 'field_543d3d742c775',
 			'label' => 'Language name',
