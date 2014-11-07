@@ -21,3 +21,5 @@
 **30.10.2014** - Menu,Read button, Price valuta now custimizible
 
 **05.11.2014** - Footer text now custimizible
+
+**07.11.2014** - Added language panel, Local partner block, removed flag icon function
