@@ -154,6 +154,51 @@ jQuery(document).ready(function($) {
      }
    });
 
+
+
+   $('.openmenu').click(function(){
+   if($('body').css("marginTop") == '0px'){
+     $('body').animate({
+       marginTop:"748px",
+       backgroundPositionY:"823px"
+     });
+   } else {
+     $('body').animate({
+       marginTop:"0px",
+       backgroundPositionY:"75px"
+     });
+   }
+ });
+
+ $('.openmenu').click(function(){
+   if($('.navbar-fixed-top').css("top") == '0px'){
+     $('.navbar-fixed-top').animate({
+       top:"748px"
+     });
+   } else {
+     $('.navbar-fixed-top').animate({
+       top:"0px"
+     });
+   }
+ });
+
+ $('.openmenu').click(function(){
+   if($('.navbar-fixed-top').css("top") == '0px'){
+     $('#langpanel').animate({
+       top:"0px",
+     });
+     $('.arrow-down').fadeIn();
+     $('.country').css({"margin-top":"22px"});
+   } else {
+     $('#langpanel').animate({
+       top:"-748px",
+     });
+     $('.arrow-down').fadeOut();
+     $('.country').css({"margin-top":"32px"});
+   }
+ });
+
+
    <!---->
    $('#langpanel').click(function(){
     if($('body').css("marginTop") !== '0px'){
