@@ -19,7 +19,7 @@
 	}
 	$context = Timber::get_context();
 
-	$context['lang_class'] = get_field('language', 'options');
+	/*$context['lang_class'] = get_field('language', 'options');*/
 	$context['lang_name'] = get_field('language_name', 'options');
 	$context['ga'] = get_field('google_analytics_code', 'options');
 	$context['canon'] = get_field('canonical_link', 'options');

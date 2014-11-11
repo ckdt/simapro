@@ -34,11 +34,10 @@
     {% block head %} {% endblock %}
     </head>
 
-<?php if ( is_user_logged_in() ) { ?>
+<?php if ( is_user_logged_in() ) { echo "l";?>
   <style  type="text/css" media="screen">
-    .navbar { margin-top: 30px; }
-    #langpanel{ margin-top: 30px;}
-    /*#contact{background:#fff url('img/background.jpg') no-repeat 0 280px;}*/
+    /*.navbar { margin-top: 30px; }*/
+    /*#langpanel{ margin-top: 30px;}*/
   </style>
 <?php } ?>
 
@@ -47,7 +46,7 @@
   		<div class="container">
   			<div class="row">
   				<div class="col-sm-12">
-  					<h2 class="text-center">Select your country</h2>
+  					<h2 class="text-center">Select a country to find your local reseller</h2>
   				</div>
   				<div class="col-sm-3">
   					<h4>Europe</h4>
@@ -92,7 +91,7 @@
               </ul>
   				</div>
   				<div class="col-sm-3">
-  					<h4>Didn't find your country?</h4>
+  					<h4>No reseller in your country?</h4>
               <ul>
                 {% for item in menu_other.get_items %}
                   <li><a href="{{item.url}}" class="btn-head" data-track-name="oth-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}} {#{{item.subtitle}}#}</a></li>
@@ -125,9 +124,9 @@
           </ul>
 					<ul class="nav navbar-nav pull-right hidden-xs">
 						<li><a href="{{trynow.get_field('button_url')}}" class="tryout hidden-sm mobile-hidden btn-head" data-track-name="{{trynow.get_field('button_label')}}" data-track-url="{{trynow.get_field('button_url')}}"><strong>{{trynow.get_field('button_label')}}</strong></a>
-					    <li class="language"><a href="#" class="language">{{lang_name}}</a></li>
-						<li><div class="arrow-down"></div><div id="panell" class="country flag flag-{{lang_class}}"></div></li>
-                    </ul>
+					  <li class="language"><a href="#" class="language">{{lang_name}}</a></li>
+						<!--<li><div class="arrow-down"></div><div id="panell" class="country flag flag-{{lang_class}}"></div></li>-->
+          </ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>

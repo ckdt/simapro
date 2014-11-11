@@ -138,7 +138,7 @@ body{
 }
 
 .language{
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .arrow-down{
@@ -247,6 +247,10 @@ body{
   font-size:44px;
   font-weight:lighter;
   padding-bottom:20px;
+}
+.redirect{
+  color:#999;
+  margin-top:10px;
 }
 #usp{
 	padding-bottom:80px;
@@ -470,7 +474,7 @@ body{
 	color: #fff;
 	font-size: 24px;
 	font-weight: normal;
-	padding:20px;
+	min-height:40px;
 	line-height:34px;
 	max-width: 240px;
 	margin-right:20px;
@@ -501,6 +505,11 @@ color: #fff;
 text-align: center;
 padding: 20px 0;
 }
+input::-moz-placeholder {
+  color: #000 !important;
+}
+
+
 
 @media only screen and (max-width : 1200px) {
 #contact{
