@@ -42,65 +42,75 @@
 <?php } ?>
 
   <body class="{{body_class}}" data-template="base.twig" data-spy="scroll" data-target=".navbar" data-offset="80">
-      <div id="langpanel" class="hidden-xs">
-  		<div class="container">
-  			<div class="row">
-  				<div class="col-sm-12">
-  					<h2 class="text-center">Select a country to find your local reseller</h2>
-  				</div>
-  				<div class="col-sm-3">
-  					<h4>Europe</h4>
-              <ul>
-                {% for item in menu_eu.get_items %}
-                  <li><a href="{{item.url}}" class="btn-head" data-track-name="eu-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
-                {% endfor %}
-              </ul>
-  				</div>
-  				<div class="col-sm-3">
-  					<h4>America</h4>
-              <ul>
-                {% for item in menu_usa.get_items %}
-                  <li><a href="{{item.url}}" class="btn-head" data-track-name="usa-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
-                {% endfor %}
-              </ul>
-            <h4>Australia</h4>
-              <ul>
-                {% for item in menu_aus.get_items %}
-                  <li><a href="{{item.url}}" class="btn-head" data-track-name="aus-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
-                {% endfor %}
-              </ul>
-            <h4>Africa</h4>
-            <ul>
-              {% for item in menu_afr.get_items %}
-                <li><a href="{{item.url}}" class="btn-head" data-track-name="afr-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
-              {% endfor %}
-            </ul>
-  				</div>
-  				<div class="col-sm-3">
-  					<h4>Asia</h4>
-              <ul>
-                {% for item in menu_asi.get_items %}
-                  <li><a href="{{item.url}}" class="btn-head" data-track-name="asi-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
-                {% endfor %}
-              </ul>
-            <h4>Middle East</h4>
-              <ul>
-                {% for item in menu_mid.get_items %}
-                  <li><a href="{{item.url}}" class="btn-head" data-track-name="mid-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
-                {% endfor %}
-              </ul>
-  				</div>
-  				<div class="col-sm-3">
-  					<h4>No reseller in your country?</h4>
-              <ul>
-                {% for item in menu_other.get_items %}
-                  <li><a href="{{item.url}}" class="btn-head" data-track-name="oth-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}} {#{{item.subtitle}}#}</a></li>
-                {% endfor %}
-              </ul>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="langpanel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="text-center">Select a country to find your local reseller</h2>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-3 col-xs-12">
+                    <h4>Europe</h4>
+                      <ul>
+                        {% for item in menu_eu.get_items %}
+                          <li><a href="{{item.url}}" class="btn-head" data-track-name="eu-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                  </div>
+                  <div class="col-sm-3 col-xs-12">
+                    <h4>America</h4>
+                      <ul>
+                        {% for item in menu_usa.get_items %}
+                          <li><a href="{{item.url}}" class="btn-head" data-track-name="usa-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    <h4>Australia</h4>
+                      <ul>
+                        {% for item in menu_aus.get_items %}
+                          <li><a href="{{item.url}}" class="btn-head" data-track-name="aus-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    <h4>Africa</h4>
+                    <ul>
+                      {% for item in menu_afr.get_items %}
+                        <li><a href="{{item.url}}" class="btn-head" data-track-name="afr-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="col-sm-3 col-xs-12">
+                    <h4>Asia</h4>
+                      <ul>
+                        {% for item in menu_asi.get_items %}
+                          <li><a href="{{item.url}}" class="btn-head" data-track-name="asi-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    <h4>Middle East</h4>
+                      <ul>
+                        {% for item in menu_mid.get_items %}
+                          <li><a href="{{item.url}}" class="btn-head" data-track-name="mid-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                  </div>
+                  <div class="col-sm-3 col-xs-12">
+                    <h4>No reseller in your country?</h4>
+                      <ul>
+                        {% for item in menu_other.get_items %}
+                          <li><a href="{{item.url}}" class="btn-head" data-track-name="oth-{{item.post_title}}" data-track-url="{{item.url}}">{{item.post_title}} {#{{item.subtitle}}#}</a></li>
+                        {% endfor %}
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / Modal -->
 
     <div id="home" class="site">
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -120,11 +130,11 @@
 						<li><a href="#usp" class="btn-head" data-track-name="Features" data-track-url="{{site.url}}/#usp">{{menu_item_1}}</a></li>
 						<li><a href="#about" class="btn-head" data-track-name="About SimaPro" data-track-url="{{site.url}}/#about">{{menu_item_2}}</a></li>
 						<li><a href="#contact" class="btn-head" data-track-name="Contact" data-track-url="{{site.url}}/#contact">{{menu_item_3}}</a></li>
-
+            <li class="language visible-xs"><a href="#" data-toggle="modal" data-target="#langpanel">{{lang_name}}</a></li>
           </ul>
 					<ul class="nav navbar-nav pull-right hidden-xs">
 						<li><a href="{{trynow.get_field('button_url')}}" class="tryout hidden-sm mobile-hidden btn-head" data-track-name="{{trynow.get_field('button_label')}}" data-track-url="{{trynow.get_field('button_url')}}"><strong>{{trynow.get_field('button_label')}}</strong></a>
-					  <li class="language"><a href="#" class="language">{{lang_name}}</a></li>
+					  <li class="language"><a href="#" data-toggle="modal" data-target="#langpanel">{{lang_name}}</a></li>
 						<!--<li><div class="arrow-down"></div><div id="panell" class="country flag flag-{{lang_class}}"></div></li>-->
           </ul>
 				</div><!--/.nav-collapse -->
